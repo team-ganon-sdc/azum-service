@@ -1,13 +1,13 @@
-# Project Name
+# Review Component
 
-> Project description
+> A component which will get reviews from a server/database. It can observe data from the reviews and will be able to sort them by certain criteria.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/FEC-Group-Link/app-preview-info-carousel
+  - https://github.com/FEC-Group-Link/review-component
+  - https://github.com/FEC-Group-Link/searchbar-similar
+  - https://github.com/FEC-Group-Link/side-navbar-component
 
 ## Table of Contents
 
