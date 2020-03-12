@@ -4,7 +4,7 @@ const db = require('../database/index.js');
 const Review = require('../database/Review.js');
 
 const app = express();
-const port = 3000;
+const port = 3002;
 
 app.use(express.static(__dirname + '/../client/dist'));
 
@@ -13,7 +13,6 @@ app.get('/reviews/:appid', (req, res) => {
     if (err) {
       return console.log(err);
     }
-    console.log(reviews);
     res.json(reviews);
   });
 });
