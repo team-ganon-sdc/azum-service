@@ -58,6 +58,7 @@ describe('the express server is functioning properly', () => {
     request(server)
       .post('/reviews')
       .then(response => {
+        console.log(response.body);
         expect(response.body).toBe('sent');
         expect(response.statusCode).toBe(200);
         done();
