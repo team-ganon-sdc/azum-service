@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build_dev": "webpack -d --watch",
-    "start_dev": "nodemon server/index.js",
+    "build-dev": "webpack -d --watch",
+    "start-dev": "nodemon server/index.js",
     "seed_database": "node database/seed.js"
   },
   "repository": {
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/FEC-Group-Link/review-component#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "jquery": "^3.4.1",
     "mongoose": "^5.9.4"
   },
   "devDependencies": {
@@ -34,10 +35,16 @@
     "nodemon": "^2.0.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "supertest": "^4.0.2",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   },
   "jest": {
-    "testEnvironment": "node"
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"],
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
