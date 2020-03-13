@@ -5,9 +5,28 @@ import $ from 'jquery';
 class Review extends Component {
   constructor() {
     super();
+    this.state = {
+      currentId: 3,
+      reviews: []
+    };
   }
 
-  handleReview() {
+  getReviewsForItem() {
+    if (this.state.currentId === -1) {
+      return;
+    }
+    $.get({
+      url: `/reviews/${this.state.currentId}`
+    })
+      .then((reviews) => {
+        this.setState({
+          reviews
+        });
+        console.log(reviews);
+      });
+  }
+
+  handleReviewPost() {
     // this data is just inserted for testing
     const review = {
       author: 'Jon',
@@ -27,7 +46,8 @@ class Review extends Component {
     return (
       <div>
         <h1>Hello World</h1>
-        <button onClick={this.handleReview} >Button Time</button>
+        <button onClick={this.handleReviewPost} >Button Time</button>
+        <button onClick={this.getReviewsForItem.bind(this)} >Get me some</button>
       </div>
     );
   }

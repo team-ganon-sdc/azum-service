@@ -12,7 +12,9 @@ describe('jest is testing written code', () => {
 describe('the express server is functioning properly', () => {
 
   afterAll(function (done) {
-    server.close(done);
+    mongoose.connection.close(() =>
+      server.close(done)
+    );
   });
 
   test('It should response the GET method', done => {
