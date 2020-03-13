@@ -27,7 +27,6 @@ app.post('/reviews', (req, res) => {
     if (err) {
       return console.log(err);
     }
-    console.log(response);
     res.json('sent');
   });
 });
