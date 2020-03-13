@@ -35,19 +35,21 @@ class Review extends Component {
       rating: 5,
       likes: 25
     };
-
     $.post({
       url: '/reviews',
       data: review
-    });
+    })
+      .then(() => {
+        console.log('sent');
+      });
   }
 
   render() {
     return (
       <div>
         <h1>Hello World</h1>
-        <button onClick={this.handleReviewPost} >Button Time</button>
-        <button onClick={this.getReviewsForItem.bind(this)} >Get me some</button>
+        <button onClick={this.handleReviewPost} >Sent post request for testing</button>
+        <button onClick={this.getReviewsForItem.bind(this)} >Get me some reviews</button>
       </div>
     );
   }
