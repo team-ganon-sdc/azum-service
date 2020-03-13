@@ -40,6 +40,8 @@
     "webpack-cli": "^3.3.11"
   },
   "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"],
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
       "/node_modules/"
