@@ -9,7 +9,8 @@ const port = 3002;
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/reviews/:appid', (req, res) => {
-  Review.find({ item: req.params.appid }, (err, reviews) => {
+  const appId = req.params.appid;
+  Review.find({ item: appId }, (err, reviews) => {
     if (err) {
       return console.log(err);
     }
@@ -17,4 +18,6 @@ app.get('/reviews/:appid', (req, res) => {
   });
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+module.exports = server;
