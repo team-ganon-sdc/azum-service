@@ -31,6 +31,6 @@ app.post('/reviews', (req, res) => {
   });
 });
 
-const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+const server = app.listen(port, () => console.log(`Review component running on port ${port}!`));
 
 module.exports = server;

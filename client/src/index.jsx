@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import ReviewList from './components/reviewList.jsx';
 import $ from 'jquery';
 
 class Review extends Component {
@@ -47,9 +48,11 @@ class Review extends Component {
   render() {
     return (
       <div>
-        <h1>Hello World</h1>
+        <h1>REVIEWS</h1>
+        <p><em>The following buttons are used exclusevily for testing</em></p>
         <button onClick={this.handleReviewPost} >Sent post request for testing</button>
         <button onClick={this.getReviewsForItem.bind(this)} >Get me some reviews</button>
+        <ReviewList reviews={[1, 2, 3]}/>
       </div>
     );
   }
