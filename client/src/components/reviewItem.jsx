@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
-const ReviewItem = function() {
+const ReviewItem = function(props) {
+  const review = props.review;
   return (
     <div className="review-item">
-      <p>Jon_b</p>
-      <p>5/10</p>
-      <p>Bruh, this app ight</p>
-      <p>Likes: 256</p>
+      <p>{review.author}</p>
+      <p>{review.rating}</p>
+      <p>{review.body}</p>
+      <p>Likes: {review.likes}</p>
     </div>
   );
 };
