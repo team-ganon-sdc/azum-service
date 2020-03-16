@@ -60,7 +60,7 @@ class Review extends Component {
   render() {
     return (
       <div className="reviews-component container">
-        <h2 className="reviews-component-header">REVIEWS</h2>
+        <h3 className="reviews-component-header">REVIEWS</h3>
         <p className="for-testing"><em>The following buttons are used exclusevily for testing</em></p>
         <button className="for-testing" onClick={this.handleReviewPost.bind(this)} >Sent post request for testing</button>
         <ReviewList reviews={this.state.reviews}/>
