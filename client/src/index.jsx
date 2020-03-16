@@ -61,10 +61,10 @@ class Review extends Component {
           likes: 214
         }, {
           _id: '5e6a7cdb65467417187a3c0',
-          author: 'Lee',
+          author: 'Vicky',
           body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu',
           item: 3,
-          rating: 8,
+          rating: 7,
           likes: 312
         }]}/>
       </div>

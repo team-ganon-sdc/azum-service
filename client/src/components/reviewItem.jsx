@@ -4,6 +4,24 @@ const ReviewItem = function(props) {
   const review = props.review;
 
   // Creates a string for rating withstars instead of numbers
+  const stars = [];
+  // for (let i = 0; i < review.rating; i++) {
+  //   stars.push(<i key={i} className="icon-star"></i>);
+  // }
+  if (review.rating % 2) {
+    // if odd
+    let numbStars = (review.rating - 1) / 2;
+    for (let i = 0; i < numbStars; i++) {
+      stars.push(<i key={i} className="icon-star"></i>);
+    }
+    stars.push(<i key="half-empty" className="icon-star-half-empty"></i>);
+  } else {
+    // if even
+    let numbStars = (review.rating - 1) / 2;
+    for (let i = 0; i < numbStars; i++) {
+      stars.push(<i key={i} className="icon-star"></i>);
+    }
+  }
 
   return (
     <div className="review-item">
@@ -16,7 +34,7 @@ const ReviewItem = function(props) {
           <div className="row">
             <div className="col-sm-8">
               <p className="review-item-author">{review.author}</p>
-              <p className="review-item-rating">{review.rating}</p>
+              <p className="review-item-rating">{stars}</p>
             </div>
             <p className="review-item-likes col-sm-4">Likes: {review.likes}</p>
           </div>
