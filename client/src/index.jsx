@@ -7,9 +7,20 @@ class Review extends Component {
   constructor() {
     super();
     this.state = {
-      currentId: 3,
+      currentId: 10,
       reviews: []
     };
+  }
+
+  componentDidMount() {
+    $.get({
+      url: `/reviews/${this.state.currentId}`
+    })
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.reverse()
+        });
+      });
   }
 
   getReviewsForItem() {
@@ -21,27 +32,28 @@ class Review extends Component {
     })
       .then((reviews) => {
         this.setState({
-          reviews
+          reviews: reviews.reverse()
         });
-        console.log(reviews);
       });
   }
 
   handleReviewPost() {
-    // this data is just inserted for testing
     const review = {
       author: 'Jon',
       body: 'I\'m baby biodiesel before they sold out chia disrupt skateboard. Selfies bicycle rights hashtag wolf hexagon health goth chambray distillery chia chartreuse. Bespoke kickstarter fanny pack taxidermy. Mlkshk venmo everyday carry gentrify, YOLO synth activated charcoal literally vaporware truffaut pop-up bespoke keytar. Lomo taiyaki synth af VHS.',
-      item: 1,
+      item: this.state.currentId,
       rating: 5,
-      likes: 25
+      likes: 25,
+      _id: 'hsfvljkhsv'
     };
     $.post({
       url: '/reviews',
       data: review
     })
       .then(() => {
-        console.log('sent');
+        this.setState({
+          reviews: [review].concat(this.state.reviews)
+        });
       });
   }
 
@@ -50,23 +62,8 @@ class Review extends Component {
       <div className="reviews-component container">
         <h2 className="reviews-component-header">REVIEWS</h2>
         <p className="for-testing"><em>The following buttons are used exclusevily for testing</em></p>
-        <button className="for-testing" onClick={this.handleReviewPost} >Sent post request for testing</button>
-        <button className="for-testing" onClick={this.getReviewsForItem.bind(this)} >Get me some reviews</button>
-        <ReviewList reviews={[{
-          _id: '5e6a7cdb65467417187a3bf2',
-          author: 'Sierra',
-          body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna',
-          item: 3,
-          rating: 8,
-          likes: 214
-        }, {
-          _id: '5e6a7cdb65467417187a3c0',
-          author: 'Vicky',
-          body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu',
-          item: 3,
-          rating: 7,
-          likes: 312
-        }]}/>
+        <button className="for-testing" onClick={this.handleReviewPost.bind(this)} >Sent post request for testing</button>
+        <ReviewList reviews={this.state.reviews}/>
       </div>
     );
   }

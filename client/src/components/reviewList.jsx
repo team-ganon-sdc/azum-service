@@ -9,7 +9,6 @@ const ReviewList = function(props) {
 
   return (
     <div className="review-list">
-      <p className="for-testing" ><em>The following are hard-coded elements to represent data</em></p>
       {reviews}
     </div>
   );
