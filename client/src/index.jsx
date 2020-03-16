@@ -47,12 +47,26 @@ class Review extends Component {
 
   render() {
     return (
-      <div>
-        <h1>REVIEWS</h1>
-        <p><em>The following buttons are used exclusevily for testing</em></p>
-        <button onClick={this.handleReviewPost} >Sent post request for testing</button>
-        <button onClick={this.getReviewsForItem.bind(this)} >Get me some reviews</button>
-        <ReviewList reviews={[1, 2, 3]}/>
+      <div className="reviews-component">
+        <h1 className="reviews-component-header">REVIEWS</h1>
+        <p className="for-testing"><em>The following buttons are used exclusevily for testing</em></p>
+        <button className="for-testing" onClick={this.handleReviewPost} >Sent post request for testing</button>
+        <button className="for-testing" onClick={this.getReviewsForItem.bind(this)} >Get me some reviews</button>
+        <ReviewList reviews={[{
+          _id: '5e6a7cdb65467417187a3bf2',
+          author: 'Sierra',
+          body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna',
+          item: 3,
+          rating: 8,
+          likes: 214
+        }, {
+          _id: '5e6a7cdb65467417187a3c0',
+          author: 'Lee',
+          body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu',
+          item: 3,
+          rating: 8,
+          likes: 312
+        }]}/>
       </div>
     );
   }
