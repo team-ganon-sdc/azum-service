@@ -4,10 +4,14 @@ const ReviewItem = function(props) {
   const review = props.review;
   return (
     <div className="review-item">
-      <p>{review.author}</p>
-      <p>{review.rating}</p>
-      <p>{review.body}</p>
-      <p>Likes: {review.likes}</p>
+      <div className="row">
+        <div className="col-sm-8">
+          <p className="review-item-author">{review.author}</p>
+          <p className="review-item-rating">{review.rating}</p>
+        </div>
+        <p className="review-item-likes col-sm-4">Likes: {review.likes}</p>
+      </div>
+      <p className="review-item-body">{review.body}</p>
     </div>
   );
 };

@@ -47,8 +47,8 @@ class Review extends Component {
 
   render() {
     return (
-      <div className="reviews-component">
-        <h1 className="reviews-component-header">REVIEWS</h1>
+      <div className="reviews-component container">
+        <h2 className="reviews-component-header">REVIEWS</h2>
         <p className="for-testing"><em>The following buttons are used exclusevily for testing</em></p>
         <button className="for-testing" onClick={this.handleReviewPost} >Sent post request for testing</button>
         <button className="for-testing" onClick={this.getReviewsForItem.bind(this)} >Get me some reviews</button>

@@ -1,7 +1,38 @@
+
+
 .review-item {
+  background-color: lightgrey;
   padding-top: 20px;
 }
+/*
+.review-item-author {
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.review-item-likes {
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.review-item-rating {
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.review-item-body {
+  margin: 10px;
+  line-height: 75px;
+  font-size: 30px;
+}
+
 
 .for-testing {
   color: darkslateblue;
-}
+} */
