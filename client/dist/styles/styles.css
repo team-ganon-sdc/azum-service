@@ -7,6 +7,10 @@ body {
   padding: 0 40px 0 45px;
 }
 
+.reviews-component {
+  background-color: white;
+}
+
 .circle {
   background-color: lightcoral;
   width: 55px;

@@ -44,7 +44,8 @@
     "coverageReporters": ["json", "html"],
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
-      "/node_modules/"
+      "/node_modules/",
+      "<rootDir>/client/dist/"
     ]
   }
 }
