@@ -8,7 +8,8 @@ class Review extends Component {
     super();
     this.state = {
       currentId: 10,
-      reviews: []
+      reviews: [],
+      value: ''
     };
   }
 
@@ -57,13 +58,32 @@ class Review extends Component {
       });
   }
 
+  handleNumberChange(event) {
+    this.setState({
+      value: event.target.value
+    });
+  }
+
+  handleIdClick() {
+    if (this.state.value !== '' && this.state.value >= 1 && this.state.value <= 100) {
+      this.setState({
+        currentId: this.state.value
+      });
+      setTimeout(() => {
+        this.getReviewsForItem();
+      }, 100);
+    }
+  }
+
   render() {
     return (
       <div className="reviews-component container">
         <h3 className="reviews-component-header">REVIEWS</h3>
-        <p className="for-testing"><em>The following buttons are used exclusevily for testing</em></p>
-        <button className="for-testing" onClick={this.handleReviewPost.bind(this)} >Sent post request for testing</button>
         <ReviewList reviews={this.state.reviews}/>
+        <p className="for-testing"><em>The following inputs are used exclusevily for testing</em></p>
+        <input className="for-testing" onChange={this.handleNumberChange.bind(this)} type="number" min="1" max="100"></input>
+        <button className="for-testing" onClick={this.handleIdClick.bind(this)}>&lt;-- Switch App ID</button>
+        <button className="for-testing" onClick={this.handleReviewPost.bind(this)} >Sent post request for testing</button>
       </div>
     );
   }
