@@ -79,11 +79,11 @@ class Review extends Component {
     return (
       <div className="reviews-component container">
         <h3 className="reviews-component-header">REVIEWS</h3>
+        <ReviewList reviews={this.state.reviews}/>
         <p className="for-testing"><em>The following inputs are used exclusevily for testing</em></p>
         <input className="for-testing" onChange={this.handleNumberChange.bind(this)} type="number" min="1" max="100"></input>
-        <button className="for-testing" onClick={this.handleIdClick.bind(this)}>Switch App ID</button>
+        <button className="for-testing" onClick={this.handleIdClick.bind(this)}>&lt;-- Switch App ID</button>
         <button className="for-testing" onClick={this.handleReviewPost.bind(this)} >Sent post request for testing</button>
-        <ReviewList reviews={this.state.reviews}/>
       </div>
     );
   }
