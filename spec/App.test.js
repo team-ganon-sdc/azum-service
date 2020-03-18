@@ -36,9 +36,19 @@ describe('Review', () => {
       rating: 5,
       likes: 25,
       _id: 'tentacle'
+    },
+    { author: 'Tester also',
+      body: 'I\'m baby',
+      item: 5,
+      rating: 8,
+      likes: 27,
+      _id: 'eleventacle'
     }];
-    // Renders when reviews exist
-    const item = shallow(<ReviewItem key={testReview[0]._id} review={testReview[0]}/>);
-    expect(item).toMatchSnapshot();
+    // Renders half stars
+    const half = shallow(<ReviewItem key={testReview[0]._id} review={testReview[0]}/>);
+    expect(half).toMatchSnapshot();
+    // Renders full stars
+    const full = shallow(<ReviewItem key={testReview[1]._id} review={testReview[1]}/>);
+    expect(full).toMatchSnapshot();
   });
 });
