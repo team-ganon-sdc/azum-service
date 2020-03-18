@@ -39,8 +39,6 @@ describe('the express server is functioning properly', () => {
     request(server)
       .get('/reviews/45')
       .then(response => {
-        // there are 6 items with the id of 45
-        // if the database is filles this needs to be changed
         expect(response.body.length).toBeGreaterThanOrEqual(0);
         expect(response.statusCode).toBe(200);
         done();
@@ -60,7 +58,6 @@ describe('the express server is functioning properly', () => {
     request(server)
       .post('/reviews')
       .then(response => {
-        console.log(response.body);
         expect(response.body).toBe('sent');
         expect(response.statusCode).toBe(200);
         done();
