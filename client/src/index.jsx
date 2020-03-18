@@ -89,6 +89,8 @@ class Review extends Component {
   }
 }
 
+export default Review;
+
 ReactDOM.render(
   <Review />,
   document.getElementById('review')
