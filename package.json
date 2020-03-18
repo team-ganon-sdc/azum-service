@@ -38,6 +38,7 @@
     "nodemon": "^2.0.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-test-renderer": "^16.13.0",
     "supertest": "^4.0.2",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
@@ -53,7 +54,11 @@
       "/node_modules/",
       "<rootDir>/client/dist/"
     ],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "setupFiles": ["./spec/setupTest.js"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./spec/setupTest.js"
+    ]
   }
 }
