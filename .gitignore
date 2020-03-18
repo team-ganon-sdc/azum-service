@@ -25,4 +25,4 @@ build/
 client/dist/bundle.js
 
 
-spec/_snapshots_
+spec/__snapshots__

@@ -20,7 +20,6 @@ const ReviewItem = function(props) {
   return (
     <div className="review-item">
       <div className="row">
-        {/* <div className="col-sm-1"></div> */}
         <div className="col-sm-1 author-image">
           <p className="circle">{review.author[0]}</p>
         </div>
