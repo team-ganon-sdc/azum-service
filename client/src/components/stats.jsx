@@ -7,6 +7,8 @@ const Stats = function(props) {
   }
   average /= props.reviews.length;
 
+  average = Math.floor(average * 10) / 10;
+
   const stars = [];
   if (average % 2) {
     let numbStars = (average - 1) / 2;
@@ -26,14 +28,26 @@ const Stats = function(props) {
       <div className="col-sm-7">
         <h1>{average / 2}</h1>
         <p>{stars}</p>
-        <p>{props.reviews.length} total</p>
+        <p><i className="icon-user"></i> {props.reviews.length} total</p>
       </div>
       <div className="col-sm-5 bars">
-        <p>|||||||||||||||||||||||</p>
-        <p>|||||||||</p>
-        <p>|||||</p>
-        <p>||</p>
-        <p>||||||</p>
+        <div className="graph-cont">
+          <div className="b-graph">
+            <div className="bar five">60%</div>
+          </div>
+          <div className="b-graph">
+            <div className="bar four">60%</div>
+          </div>
+          <div className="b-graph">
+            <div className="bar three">60%</div>
+          </div>
+          <div className="b-graph">
+            <div className="bar two">60%</div>
+          </div>
+          <div className="b-graph">
+            <div className="bar one">60%</div>
+          </div>
+        </div>
       </div>
     </div>
   );

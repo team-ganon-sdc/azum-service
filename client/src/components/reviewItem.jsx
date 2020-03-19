@@ -20,17 +20,17 @@ const ReviewItem = function(props) {
   return (
     <div className="review-item">
       <div className="row">
-        <div className="col-md-2 col-lg-1 author-image">
+        <div className="col-md-2 author-image">
           <p className="circle">{review.author[0]}</p>
         </div>
 
-        <div className="col-md-10 col-lg-11">
+        <div className="col-md-10">
           <div className="row">
             <div className="col-sm-10 col-md-9">
               <p className="review-item-author">{review.author}</p>
               <p className="review-item-rating">{stars}</p>
             </div>
-            <p className="review-item-likes col-sm-2 col-md-3">Likes: {review.likes}</p>
+            <p className="review-item-likes col-sm-2 col-md-3"><i className="icon-thumbs-up"></i>: {review.likes}</p>
           </div>
           <p className="review-item-body">{review.body}</p>
         </div>
