@@ -13,6 +13,7 @@ class Review extends Component {
 
   componentDidMount() {
     const currentId = Math.floor(Math.random() * 100) + 1;
+    console.log(currentId);
     if ($.get) {
       $.get({
         url: `/reviews/${currentId}`
@@ -28,7 +29,7 @@ class Review extends Component {
   render() {
     return (
       <div className="reviews-component container">
-        <h3 className="reviews-component-header">REVIEWS</h3>
+        <p className="reviews-component-header">REVIEWS</p>
         <Stats reviews={this.state.reviews}/>
         <ReviewList reviews={this.state.reviews}/>
       </div>
