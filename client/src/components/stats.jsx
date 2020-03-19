@@ -18,7 +18,7 @@ const Stats = function(props) {
   for (let i = 1; i <= 5; i++) {
     const percent = (ratings[i] / props.reviews.length) * 100;
     sizes.push({
-      'maxWidth': `${percent || 1}%`
+      'maxWidth': `${percent + 25 || 1}%`
     });
   }
 
@@ -38,12 +38,14 @@ const Stats = function(props) {
 
   return (
     <div className="row stats">
-      <div className="col-sm-7">
+      <div className="col-sm-2"></div>
+      <div className="col-sm-3">
         <h1>{(average / 2) || 0}</h1>
         <p>{stars}</p>
         <p><i className="icon-user"></i> {props.reviews.length} total</p>
       </div>
-      <div className="col-sm-5 bars">
+      <div className="col-sm-1"></div>
+      <div className="col-sm-4 bars">
         <div className="graph-cont">
           <div className="b-graph">
             <div className="bar five" style={sizes[4]}>&#8203;</div>
@@ -62,6 +64,7 @@ const Stats = function(props) {
           </div>
         </div>
       </div>
+      <div className="col-sm-2"></div>
     </div>
   );
 };

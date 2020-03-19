@@ -13,7 +13,6 @@ class Review extends Component {
 
   componentDidMount() {
     const currentId = Math.floor(Math.random() * 100) + 1;
-    console.log(currentId);
     if ($.get) {
       $.get({
         url: `/reviews/${currentId}`

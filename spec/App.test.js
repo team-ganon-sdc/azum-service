@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 
 import Review from '../client/src/components/app.jsx';
+import Stats from '../client/src/components/stats.jsx';
 import ReviewList from '../client/src/components/reviewList.jsx';
 import ReviewItem from '../client/src/components/reviewItem.jsx';
 
@@ -9,6 +10,11 @@ describe('Review', () => {
   test('renders review list', () => {
     const wrapper = shallow(<Review />);
     expect(wrapper.find(ReviewList).length).toEqual(1);
+  });
+
+  test('renders stats item', () => {
+    const wrapper = shallow(<Review />);
+    expect(wrapper.find(Stats).length).toEqual(1);
   });
 
   test('review list has some list items', () => {
@@ -49,6 +55,19 @@ describe('Review', () => {
     expect(half).toMatchSnapshot();
     // Renders full stars
     const full = shallow(<ReviewItem key={testReview[1]._id} review={testReview[1]}/>);
+    expect(full).toMatchSnapshot();
+  });
+
+  test('statistics component', () => {
+    const testCases = [
+      [{rating: 10}, {rating: 5}],
+      []
+    ];
+    // Renders with no ratings
+    const empty = shallow(<Stats key={0} reviews={testCases[0]}/>);
+    expect(empty).toMatchSnapshot();
+    // Renders with ratings
+    const full = shallow(<Stats key={1} reviews={testCases[1]}/>);
     expect(full).toMatchSnapshot();
   });
 });
