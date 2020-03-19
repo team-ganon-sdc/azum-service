@@ -81,7 +81,7 @@ class Review extends Component {
     return (
       <div className="reviews-component container">
         <h3 className="reviews-component-header">REVIEWS</h3>
-        <Stats />
+        <Stats reviews={this.state.reviews}/>
         <ReviewList reviews={this.state.reviews}/>
         <p className="for-testing"><em>The following inputs are used exclusevily for testing</em></p>
         <input className="for-testing" onChange={this.handleNumberChange.bind(this)} type="number" min="1" max="100"></input>
