@@ -18,7 +18,7 @@ const Stats = function(props) {
   for (let i = 1; i <= 5; i++) {
     const percent = (ratings[i] / props.reviews.length) * 100;
     sizes.push({
-      'maxWidth': `${percent + 25 || 1}%`
+      'maxWidth': `${percent * 1.50 || 4}%`
     });
   }
 
@@ -38,33 +38,33 @@ const Stats = function(props) {
 
   return (
     <div className="row stats">
-      <div className="col-sm-2"></div>
+      <div className="col-sm-1"></div>
       <div className="col-sm-3">
-        <h1>{(average / 2) || 0}</h1>
-        <p>{stars}</p>
-        <p><i className="icon-user"></i> {props.reviews.length} total</p>
+        <h1 className="stats-average">{(average / 2) || 0}</h1>
+        <p className="stats-stars">{stars}</p>
+        <p className="stats-number"><i className="icon-user"></i> {props.reviews.length} total</p>
       </div>
       <div className="col-sm-1"></div>
-      <div className="col-sm-4 bars">
+      <div className="col-sm-6 bars">
         <div className="graph-cont">
           <div className="b-graph">
-            <div className="bar five" style={sizes[4]}>&#8203;</div>
+            <div className="bar five" style={sizes[4]}>5</div>
           </div>
           <div className="b-graph">
-            <div className="bar four" style={sizes[3]}>&#8203;</div>
+            <div className="bar four" style={sizes[3]}>4</div>
           </div>
           <div className="b-graph">
-            <div className="bar three" style={sizes[2]}>&#8203;</div>
+            <div className="bar three" style={sizes[2]}>3</div>
           </div>
           <div className="b-graph">
-            <div className="bar two" style={sizes[1]}>&#8203;</div>
+            <div className="bar two" style={sizes[1]}>2</div>
           </div>
           <div className="b-graph">
-            <div className="bar one" style={sizes[0]}>&#8203;</div>
+            <div className="bar one" style={sizes[0]}>1</div>
           </div>
         </div>
       </div>
-      <div className="col-sm-2"></div>
+      <div className="col-sm-1"></div>
     </div>
   );
 };
