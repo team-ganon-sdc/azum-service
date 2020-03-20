@@ -37,20 +37,36 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 150%;
+  font-size: 160%;
+  font-weight: 500;
   color: white;
 }
 
 .author-image {
-  padding: 0 10px 15px;
+  padding: 0 0 0;
 }
 
 .review-item {
   padding: 15px 20px 25px;
 }
 
-.review-item-likes, .review-item-author{
+.review-item-textbox {
+  padding: 0 0 0 25px;
+}
+
+.review-item-author {
   font-size: 125%;
+  font-weight: 500;
+}
+
+.review-item-likes {
+  font-size: 120%;
+  font-weight: 200;
+}
+
+.review-item-body {
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .stats {
@@ -69,9 +85,15 @@ body {
   letter-spacing: 6px;
 }
 
+.review-item-stars {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
 .stats-number {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .graph-cont {

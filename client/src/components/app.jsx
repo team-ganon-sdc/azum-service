@@ -41,7 +41,7 @@ class Review extends Component {
         reviews
       });
       break;
-    case 'recommended':
+    case 'positive':
       reviews.sort((a, b) => (b.rating - a.rating));
       this.setState({
         reviews
@@ -64,7 +64,7 @@ class Review extends Component {
           <select className="col-sm-4" onChange={this.handleSelectChange.bind(this)} id="sort" name="sort">
             <option value="recent">Most Recent</option>
             <option value="liked">Most Helpful</option>
-            <option value="recommended">Most Recommended</option>
+            <option value="positive">Most Positive</option>
             <option value="critical">Most Critical</option>
           </select>
         </div>
