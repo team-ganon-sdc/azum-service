@@ -31,6 +31,14 @@ app.post('/reviews', (req, res) => {
   });
 });
 
+app.post('/likes/:reviewId', (req, res) => {
+  Review.findById(req.params.reviewId, (err, review) => {
+    Review.updateOne({ _id: review._id}, { likes: review.likes + 1 }, (err, whatever) => {
+      res.end();
+    });
+  });
+});
+
 const server = app.listen(port, () => console.log(`Review component running on port ${port}!`));
 
 module.exports = server;
