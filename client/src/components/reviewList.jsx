@@ -7,6 +7,12 @@ const ReviewList = function(props) {
     return <ReviewItem key={review._id} review={review}/>;
   });
 
+  if (!reviews.length) {
+    reviews.push(
+      <p key="empty" className="empty-message">Sorry, It doesn't seem like there are any reviews.</p>
+    );
+  }
+
   return (
     <div className="review-list">
       {reviews}
