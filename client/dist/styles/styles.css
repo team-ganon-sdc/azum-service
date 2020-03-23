@@ -1,6 +1,9 @@
 body {
   background-color: lightgrey;
 }
+.white {
+  background-color: white;
+}
 
 .review-list {
   background-color: white;
@@ -14,19 +17,15 @@ body {
 }
 
 .reviews-component-header {
-  padding: 30px 0 10px 25px;
-  font-size: 14px;
+  padding: 30px 25px 20px 25px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .empty-message {
   padding: 30px 0;
   text-align: center;
   font-size: 160%;
-}
-
-.stats {
-  text-align: center;
-  padding-bottom: 25px;
 }
 
 .bars {
@@ -41,20 +40,63 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 150%;
+  font-size: 160%;
+  font-weight: 500;
   color: white;
 }
 
 .author-image {
-  padding: 0 10px 15px;
+  padding: 0 0 0;
 }
 
 .review-item {
   padding: 15px 20px 25px;
 }
 
-.review-item-likes, .review-item-author{
+.review-item-textbox {
+  padding: 0 0 0 25px;
+}
+
+.review-item-author {
   font-size: 125%;
+  font-weight: 500;
+}
+
+.review-item-likes {
+  font-size: 120%;
+  font-weight: 200;
+}
+
+.review-item-body {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.stats {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.stats-average {
+  font-weight: 100;
+  font-size: 64px;
+}
+
+.stats-stars {
+  padding: 10px 0 5px;
+  font-size: 20px;
+  letter-spacing: 6px;
+}
+
+.review-item-stars {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.stats-number {
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .graph-cont {
@@ -62,7 +104,8 @@ body {
 }
 
 .bar {
-  text-align: right;
+  text-align: left;
+  padding-left: 2px;
   padding-top: 0px;
   padding-bottom: 0px;
   color: white;
@@ -73,21 +116,21 @@ body {
 }
 
 .five {
-  background-color: skyblue;
+  background-color: #57bb8a;
 }
 
 .four {
-  background-color: lightgreen;
+  background-color: #9ace6a;
 }
 
 .three {
-  background-color: peachpuff;
+  background-color: #ffcf02;
 }
 
 .two {
-  background-color: lightsalmon;
+  background-color: #ff9f02;
 }
 
 .one {
-  background-color: indianred;
+  background-color: #ff6f31;
 }

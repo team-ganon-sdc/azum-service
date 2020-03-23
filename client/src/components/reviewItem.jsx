@@ -25,6 +25,9 @@ class ReviewItem extends Component {
         stars.push(<i key={i} className="icon-star"></i>);
       }
     }
+    for (let i = stars.length; i < 5; i++) {
+      stars.push(<i key={i} className="icon-star-empty"></i>);
+    }
     this.setState({
       stars
     });
@@ -49,14 +52,14 @@ class ReviewItem extends Component {
     return (
       <div className="review-item">
         <div className="row">
-          <div className="col-md-2 author-image">
+          <div className="col-md-1 author-image">
             <p className="circle">{this.state.review.author[0]}</p>
           </div>
-          <div className="col-md-10">
+          <div className="col-md-11 review-item-textbox">
             <div className="row">
               <div className="col-sm-10 col-md-9">
                 <p className="review-item-author">{this.state.review.author}</p>
-                <p className="review-item-rating">{this.state.stars}</p>
+                <p className="review-item-stars">{this.state.stars}</p>
               </div>
               <p className="review-item-likes col-sm-2 col-md-3"><a onClick={this.handleLikeClick.bind(this)}><i className="icon-thumbs-up"></i></a>: {this.state.review.likes}</p>
             </div>

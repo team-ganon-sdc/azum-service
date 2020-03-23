@@ -7,7 +7,8 @@ class Review extends Component {
   constructor() {
     super();
     this.state = {
-      reviews: []
+      reviews: [],
+      original: []
     };
   }
 
@@ -19,16 +20,54 @@ class Review extends Component {
       })
         .then((reviews) => {
           this.setState({
-            reviews: reviews.reverse()
+            reviews: reviews,
+            original: reviews
           });
         });
+    }
+  }
+
+  handleSelectChange(e) {
+    let reviews = this.state.original.slice();
+    switch (e.target.value) {
+    case 'recent':
+      this.setState({
+        reviews
+      });
+      break;
+    case 'liked':
+      reviews.sort((a, b) => (b.likes - a.likes));
+      this.setState({
+        reviews
+      });
+      break;
+    case 'positive':
+      reviews.sort((a, b) => (b.rating - a.rating));
+      this.setState({
+        reviews
+      });
+      break;
+    case 'critical':
+      reviews.sort((a, b) => (a.rating - b.rating));
+      this.setState({
+        reviews
+      });
+      break;
     }
   }
 
   render() {
     return (
       <div className="reviews-component container">
-        <p className="reviews-component-header">REVIEWS</p>
+        <div className="row  reviews-component-header">
+          <p className="col-sm-8">REVIEWS</p>
+          <select className="col-sm-4" onChange={this.handleSelectChange.bind(this)} id="sort" name="sort">
+            <option value="recent">Most Recent</option>
+            <option value="liked">Most Helpful</option>
+            <option value="positive">Most Positive</option>
+            <option value="critical">Most Critical</option>
+          </select>
+        </div>
         <Stats reviews={this.state.reviews}/>
         <ReviewList reviews={this.state.reviews}/>
       </div>

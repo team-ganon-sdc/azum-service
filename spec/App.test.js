@@ -17,6 +17,11 @@ describe('Review', () => {
     expect(wrapper.find(Stats).length).toEqual(1);
   });
 
+  test('creates an input', () => {
+    const wrapper = shallow(<Review />);
+    expect(wrapper.find('select').length).toEqual(1);
+  });
+
   test('review list has some list items', () => {
     const testReview = [{
       author: 'Tester',
@@ -64,10 +69,10 @@ describe('Review', () => {
       []
     ];
     // Renders with no ratings
-    const empty = shallow(<Stats key={0} reviews={testCases[0]}/>);
+    const empty = shallow(<Stats key={0} reviews={testCases[1]}/>);
     expect(empty).toMatchSnapshot();
     // Renders with ratings
-    const full = shallow(<Stats key={1} reviews={testCases[1]}/>);
+    const full = shallow(<Stats key={1} reviews={testCases[0]}/>);
     expect(full).toMatchSnapshot();
   });
 });
