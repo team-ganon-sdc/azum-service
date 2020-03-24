@@ -17,7 +17,7 @@ class Review extends Component {
     const currentId = this.state.id || Math.floor(Math.random() * 100) + 1;
     if ($.get) {
       $.get({
-        url: `/reviews/${currentId}`
+        url: `http://localhost:3002/reviews/${currentId}`
       })
         .then((reviews) => {
           this.setState({
