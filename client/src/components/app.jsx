@@ -4,8 +4,8 @@ import ReviewList from './reviewList.jsx';
 import $ from 'jquery';
 
 class Review extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       reviews: [],
       original: []
@@ -13,7 +13,7 @@ class Review extends Component {
   }
 
   componentDidMount() {
-    const currentId = Math.floor(Math.random() * 100) + 1;
+    const currentId = props.id || Math.floor(Math.random() * 100) + 1;
     if ($.get) {
       $.get({
         url: `/reviews/${currentId}`
