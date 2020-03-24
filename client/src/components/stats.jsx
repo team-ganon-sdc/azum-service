@@ -39,31 +39,39 @@ const Stats = function(props) {
     stars.push(<i key={i} className="icon-star-empty"></i>);
   }
 
+  const bar = {
+    textAlign: 'left',
+    paddingLeft: '2px',
+    paddingTop: '0px',
+    paddingBottom: '0px',
+    color: 'white'
+  };
+
   return (
-    <div className="row stats">
+    <div className="row" style={{textAlign: 'center', paddingBottom: '25px'}}>
       <div className="col-sm-1"></div>
       <div className="col-sm-3">
-        <h1 className="stats-average">{(average / 2) || 0}</h1>
-        <p className="stats-stars">{stars}</p>
-        <p className="stats-number"><i className="icon-user"></i>	&nbsp;{props.reviews.length} total</p>
+        <h1 style={{fontWeight: '100', fontSize: '64px'}}>{(average / 2) || 0}</h1>
+        <p style={{padding: '10px 0 5px', fontSize: '20px', letterSpacing: '6px'}}>{stars}</p>
+        <p style={{fontWeight: '300', fontSize: '16px', letterSpacing: '1px'}}><i className="icon-user"></i>	&nbsp;{props.reviews.length} total</p>
       </div>
       <div className="col-sm-1"></div>
-      <div className="col-sm-6 bars">
-        <div className="graph-cont">
-          <div className="b-graph">
-            <div className="bar five" style={sizes[4]}>5</div>
+      <div className="col-sm-6" style={{textAlign: 'left'}}>
+        <div style={{marginRight: '10px'}}>
+          <div style={{paddingBottom: '5px'}}>
+            <div className="bar five" style={Object.assign({maxWidth: sizes[4].maxWidth, backgroundColor: '#57bb8a'}, bar)}>5</div>
           </div>
-          <div className="b-graph">
-            <div className="bar four" style={sizes[3]}>4</div>
+          <div style={{paddingBottom: '5px'}}>
+            <div className="bar four" style={Object.assign({maxWidth: sizes[3].maxWidth, backgroundColor: '#9ace6a'}, bar)}>4</div>
           </div>
-          <div className="b-graph">
-            <div className="bar three" style={sizes[2]}>3</div>
+          <div style={{paddingBottom: '5px'}}>
+            <div className="bar three" style={Object.assign({maxWidth: sizes[2].maxWidth, backgroundColor: '#ffcf02'}, bar)}>3</div>
           </div>
-          <div className="b-graph">
-            <div className="bar two" style={sizes[1]}>2</div>
+          <div style={{paddingBottom: '5px'}}>
+            <div className="bar two" style={Object.assign({maxWidth: sizes[1].maxWidth, backgroundColor: '#ff9f02'}, bar)}>2</div>
           </div>
-          <div className="b-graph">
-            <div className="bar one" style={sizes[0]}>1</div>
+          <div style={{paddingBottom: '5px'}}>
+            <div className="bar one" style={Object.assign({maxWidth: sizes[0].maxWidth, backgroundColor: '#ff6f31'}, bar)}>1</div>
           </div>
         </div>
       </div>

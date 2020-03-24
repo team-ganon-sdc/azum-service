@@ -50,20 +50,20 @@ class ReviewItem extends Component {
 
   render() {
     return (
-      <div className="review-item">
+      <div style={{padding: '15px 20px 25px'}}>
         <div className="row">
-          <div className="col-md-1 author-image">
-            <p className="circle">{this.state.review.author[0]}</p>
+          <div className="col-md-1" style={{padding: '0 0 0'}}>
+            <p style={{backgroundColor: 'lightcoral', width: '55px', height: '55px', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '160%', fontWeight: '500', color: 'white'}}>{this.state.review.author[0]}</p>
           </div>
-          <div className="col-md-11 review-item-textbox">
+          <div className="col-md-11" style={{padding: '0 0 0 25px'}}>
             <div className="row">
               <div className="col-sm-10 col-md-9">
-                <p className="review-item-author">{this.state.review.author}</p>
-                <p className="review-item-stars">{this.state.stars}</p>
+                <p style={{fontSize: '125%', fontWeight: '500'}}>{this.state.review.author}</p>
+                <p style={{fontSize: '14px', letterSpacing: '2px'}}>{this.state.stars}</p>
               </div>
-              <p className="review-item-likes col-sm-2 col-md-3"><a onClick={this.handleLikeClick.bind(this)}><i className="icon-thumbs-up"></i></a>: {this.state.review.likes}</p>
+              <p className="col-sm-2 col-md-3" style={{fontSize: '120%', fontWeight: '200'}}><a onClick={this.handleLikeClick.bind(this)}><i className="icon-thumbs-up"></i></a>: {this.state.review.likes}</p>
             </div>
-            <p className="review-item-body">{this.state.review.body}</p>
+            <p style={{fontSize: '18px', fontWeight: '300'}}>{this.state.review.body}</p>
           </div>
         </div>
       </div>
