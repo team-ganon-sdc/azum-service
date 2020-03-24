@@ -59,8 +59,8 @@ class Review extends Component {
 
   render() {
     return (
-      <div className="reviews-component container">
-        <div className="row  reviews-component-header">
+      <div className="container" style={{'backgroundColor': 'white', 'color': 'rgb(90, 90, 90)', 'width': '720px'}}>
+        <div className="row" style={{padding: '30px 25px 20px 25px', fontSize: '16px', fontWeight: '400'}}>
           <p className="col-sm-8">REVIEWS</p>
           <select className="col-sm-4" onChange={this.handleSelectChange.bind(this)} id="sort" name="sort">
             <option value="recent">Most Recent</option>
