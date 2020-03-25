@@ -37,7 +37,7 @@ class ReviewItem extends Component {
     const review = this.state.review;
     if ($.post) {
       $.post({
-        url: `/likes/${review._id}`
+        url: `http://localhost:3002/likes/${review._id}`
       })
         .then(()=> {
           review.likes++;
