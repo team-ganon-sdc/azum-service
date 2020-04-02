@@ -12,9 +12,9 @@ const faker = require("faker");
 
 const data = [];
 
-let i = 10
+let i = 100000
 while (i--) {
-  let reviewCount = Math.floor(Math.random() * 16) + 5; // generate random # of reviews between 5 and 20
+  let reviewCount = Math.floor(Math.random() * 4) + 2; // generate random # of reviews between 2 and 5
 
   while (reviewCount--) {
     data.push({
@@ -31,12 +31,9 @@ while (i--) {
 }
 
 const jsonData = JSON.stringify(data);
-// console.log(jsonData)
 
 fs.writeFile("database/data2.json", jsonData, err => {
   if (err) {
     console.log(err);
   }
 });
-
-// module.exports = data;
