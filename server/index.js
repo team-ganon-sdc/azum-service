@@ -36,6 +36,18 @@ app.post('/reviews', (req, res) => {
   });
 });
 
+app.put('/reviews/:reviewId', (req, res) => {
+  Review.findOneAndUpdate({ item: req.params.reviewId }, req.body)
+    .then(result => res.json(result))
+    .catch(e => res.json(e));
+});
+
+app.delete('/reviews/:reviewId', (req, res) => {
+  Review.deleteOne({ item: req.params.reviewId })
+    .then(result => res.json(result))
+    .catch(e => res.json(e));
+});
+
 app.post('/likes/:reviewId', (req, res) => {
   Review.findById(req.params.reviewId, (err, review) => {
     Review.updateOne({ _id: review._id}, { likes: review.likes + 1 }, (err, whatever) => {
