@@ -14,7 +14,7 @@ class Review extends Component {
   }
 
   componentDidMount() {
-    const currentId = this.state.id || Math.floor(Math.random() * 100) + 1;
+    const currentId = parseInt((window.location.href.split("="))[1]);
     if ($.get) {
       $.get({
         url: `http://localhost:3002/reviews/${currentId}`
