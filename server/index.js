@@ -40,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/reviews/:appid', async (req, res) => {
   try {
     const appId = req.params.appid;
-    const { rows } = await client.query(`SELECT * FROM Review WHERE item = ${appId}`);
+    const { rows } = await client.query(`SELECT * FROM Review WHERE item = $1`, [appId]);
     res.json(rows);
   }
   catch (e) {
@@ -51,8 +51,8 @@ app.get('/reviews/:appid', async (req, res) => {
 
 app.post('/reviews', async (req, res) => {
   try {
-    const review = req.body;
-    const result = await client.query(`INSERT INTO Review (item, author, body, rating, likes) VALUES (:item, :author, :body, :rating, :likes)`, review);
+    const { item, author, body, rating, likes } = req.body;
+    const result = await client.query(`INSERT INTO Review (item, author, body, rating, likes) VALUES ($1, $2, $3, $4, $5)`, [item, author, body, rating, likes]);
     res.json(result);
   }
   catch (e) {
@@ -64,17 +64,18 @@ app.post('/reviews', async (req, res) => {
 app.put('/reviews/:reviewId', async (req, res) => {
   try {
     const { item, author, body, rating, likes } = req.body;
-    const result = await client.query(`UPDATE Review SET item = ?, author = ?, body = ?, rating = ?, likes = ? WHERE id = ?`, [item, author, body, rating, likes, reviewId]);
+    const result = await client.query(`UPDATE Review SET item = $1, author = $2, body = $3, rating = $4, likes = $5 WHERE id = $6`, [item, author, body, rating, likes, req.params.reviewId]);
     res.json(result);
   }
   catch (e) {
+    console.log(e);
     res.json(e);
   }
 });
 
 app.delete('/reviews/:reviewId', async (req, res) => {
   try {
-    const result = await client.query("DELETE FROM Review WHERE id = ?", [req.params.reviewId]);
+    const result = await client.query("DELETE FROM Review WHERE id = $1", [req.params.reviewId]);
     res.json(result);
   }
   catch (e) {
@@ -85,7 +86,7 @@ app.delete('/reviews/:reviewId', async (req, res) => {
 
 app.post('/likes/:reviewId', async (req, res) => {
   try {
-    const result = await client.query("UPDATE Review SET likes = likes + 1 WHERE id = ?", [req.params.reviewId]);
+    const result = await client.query("UPDATE Review SET likes = likes + 1 WHERE id = $1", [req.params.reviewId]);
     res.json(result);
   }
   catch {
