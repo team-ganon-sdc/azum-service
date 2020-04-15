@@ -1,6 +1,6 @@
 config:
   target: "http://localhost:3002"
-  processor: "./my-functions.js"
+  processor: "./processor.js"
   phases:
     - duration: 60
       arrivalRate: 1000
@@ -9,10 +9,9 @@ config:
       x-my-service-auth: "987401838271002188298567"
 scenarios:
   - flow:
-    - function: "generateRandomId"
+    - function: "generateRandomData"
     - get:
         url: "/?id={{ id }}"
-    - function: "generateRandomData"
     - post:
         url: "/reviews"
         json:
