@@ -29,7 +29,7 @@ if (cluster.isMaster) {
   const client = new Client({
     user: "postgres",
     password: "postgres",
-    host: "ec2-18-224-212-189.us-east-2.compute.amazonaws.com",
+    host: "localhost",
     port: 5432,
     database: "reviews"
   });
