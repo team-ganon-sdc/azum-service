@@ -21,8 +21,8 @@ if (cluster.isMaster) {
   require('newrelic');
   const express = require('express');
   const path = require('path');
-  const db = require('../database/index.js');
-  const Review = require('../database/Review.js');
+  // const db = require('../database/index.js');
+  // const Review = require('../database/Review.js');
   const bodyParser = require('body-parser');
   const { Client } = require("pg");
 
