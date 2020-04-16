@@ -28,5 +28,8 @@ client/dist/bundle.js
 spec/__snapshots__
 
 # Reviews datafile
-
 reviews.csv
+
+# AWS keys
+sdc-database.pem
+sdc-service.pem
